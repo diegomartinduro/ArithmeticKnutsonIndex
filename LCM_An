@@ -1,0 +1,15 @@
+#This code gives the integer sequence such that L(An)=n!/2 (cf. A363676 in OEIS)
+
+n=1
+while n>0:
+    f = factorial(n)
+    G = AlternatingGroup(n)
+    N = G.character_table()
+    C = N.nrows()
+    r = zero_vector(ZZ, C)
+    for i in IntegerRange(C):
+        r[i] = N[i,0]
+    l = lcm(r)
+    if f/2 == l:
+        print(n)
+    n=n+1
