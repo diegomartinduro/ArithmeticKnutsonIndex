@@ -1,0 +1,16 @@
+#This code generates the sequence of integers such that the group Sn has a zero in every non-trivial column
+
+n=1
+while n>0:
+    G = SymmetricGroup(n)
+    C = G.conjugacy_classes()
+    c = len(C)
+    N = G.character_table()
+    S=set()
+    for j in IntegerRange(1, c):
+        if 0 not in N[:, j]:
+                S.add(n)
+                break
+    if n not in S:
+        print(n)
+    n=n+1
