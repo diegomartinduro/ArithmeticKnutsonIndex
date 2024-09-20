@@ -1,4 +1,4 @@
-#This code generates the sequence of integers such that the group Sn has a zero in every non-trivial column
+#This code generates the sequence of integers such that the group Sn has a zero in every non-trivial column (cf. 363701 in OEIS)
 
 n=1
 while n>0:
